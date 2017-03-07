@@ -52,7 +52,7 @@ for item =1:length(list)%iterate through the list
         %^^ indexed in all of the file refferencing
     end
 end
-fin_struct(10)
+
 if real_item==0
     'There are no .mp3 files in this directory'
     return
@@ -61,7 +61,7 @@ end
 
 %%%THE MAINLOOP%%%
 
-%state='ask_all';
+state='ask_all';
 %^keep track of user inputs
 
 %while true
@@ -102,23 +102,23 @@ end
 %                
 %                test=1;
 %                misc_list=strings(1,real_item);
-%                for item=1:length(fin_struct)
-%                    %^^iterate through all the songs found
-%                    if strcmp(state,'album')%if user said album earlier
-%                        if strcmp(fin_struct(item).Album,qu)
-%                            %^^if album name matches
-%                            fin_struct(item).Title%display song title
-%                            misc_list(item)=fin_struct(item).Title;
-%                        end
-%                    elseif strcmp(state,'artist')%if user said artist
-%                        if strcmp(fin_struct(item).Artist,qu)
-%                            %^^if artist matches
-%                            fin_struct(item).Title%display song title
-%                            misc_list(item)=fin_struct(item).Title;
-%                        end
-%                    end
-%                end
-%                state=char('Song');%change state
-%            else
-%                'That is not a listed album or artist.'
-%            
+                for item=1:length(fin_struct)
+                    %^^iterate through all the songs found
+                    if strcmp(state,'album')%if user said album earlier
+                        if strcmp(fin_struct(item).Album,qu)
+                            %^^if album name matches
+                            fin_struct(item).Title%display song title
+                            misc_list(item)=fin_struct(item).Title;
+                        end
+                    elseif strcmp(state,'artist')%if user said artist
+                        if strcmp(fin_struct(item).Artist,qu)
+                            %^^if artist matches
+                            fin_struct(item).Title%display song title
+                            misc_list(item)=fin_struct(item).Title;
+                        end
+                    end
+                end
+                state=char('Song');%change state
+            else
+                'That is not a listed album or artist.'
+            
